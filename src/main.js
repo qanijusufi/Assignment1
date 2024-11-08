@@ -27,25 +27,24 @@ function main() {
 
   const movingCircleMaterial = new THREE.MeshLambertMaterial({
     color: 0xff0000,
-  }); // Red color for the circle
+  });
   const movingCircle = new THREE.Mesh(
     new THREE.SphereGeometry(3, 16, 16),
     movingCircleMaterial
   );
 
-  let circlePositionZ = -70; // Initial position on the road
-  const speed = 1.5; // Speed of movement
+  let circlePositionZ = -70;
+  const speed = 1.5;
 
   createCampus(scene, movingCircle);
 
   function animate() {
     requestAnimationFrame(animate);
 
-    // Update circle position
     circlePositionZ += speed;
-    if (circlePositionZ > 80) circlePositionZ = -70; // Loop back when it reaches the end of the road
+    if (circlePositionZ > 80) circlePositionZ = -70;
 
-    movingCircle.position.set(0, 5, circlePositionZ); // Move along the road
+    movingCircle.position.set(0, 5, circlePositionZ);
 
     renderer.render(scene, camera);
   }

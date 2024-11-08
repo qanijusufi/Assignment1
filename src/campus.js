@@ -57,5 +57,5 @@ export function createCampus(scene, movingCircle) {
   roundabout.rotation.x = -Math.PI / 2;
   scene.add(roundabout);
 
-  scene.add(movingCircle); // Add the moving circle to the scene
+  scene.add(movingCircle);
 }
